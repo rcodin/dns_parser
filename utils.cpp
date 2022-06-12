@@ -6,39 +6,39 @@ enum MESSAGE_TYPE {
 class Utils {
 public:
 	int hex_to_dig(char hex) {
-	    if (hex >= '0' && hex <= '9') {
-	        return hex - '0';
-	    } else if (hex >= 'a' && hex <= 'f') {
-	        return 9 + (hex - 'a');
-	    }
-	    return -1;
+		if (hex >= '0' && hex <= '9') {
+			return hex - '0';
+		} else if (hex >= 'a' && hex <= 'f') {
+			return 9 + (hex - 'a');
+		}
+		return -1;
 	}
 
 	// return the end index
 	int labels_parser(string &message, int &start_index,
 									string &output) {
-	    // get first octate
-	    int len = 0;
-	    int idx = start_index;
+		// get first octate
+		int len = 0;
+		int idx = start_index;
 
-	    if (message.size() < 2)
-	        return;
+		if (message.size() < 2)
+			return;
 
-	    len = hex_to_dig(message[idx]);
-	    len = len * 10 + hex_to_dig(message[idx + 1]);
+		len = hex_to_dig(message[idx]);
+		len = len * 10 + hex_to_dig(message[idx + 1]);
 
-	    idx += 2;
-	    while (len > 0) {
-	        // parse the next url part
-	        qname = qname + message.substr(idx, len);
-	        idx += len;
-	        len = hex_to_dig(message[idx]) * 10 +
-	                        hex_to_dig(message[idx + 1]);
-	        idx += 2;
-	    }
+		idx += 2;
+		while (len > 0) {
+			// parse the next url part
+			qname = qname + message.substr(idx, len);
+			idx += len;
+			len = hex_to_dig(message[idx]) * 10 +
+							hex_to_dig(message[idx + 1]);
+			idx += 2;
+		}
 
-	    output = qname;
-	    return idx;
+		output = qname;
+		return idx;
 	}
 
 	int pointer_parser(string &message, int &start_index,

@@ -1,21 +1,27 @@
 class DNS_Parser {
 private:
-    string encoded_message;
+	string encoded_message;
 public:
-    DNS_Parser() {
+	DNS_Parser() {
 
-    }
-    int parse(string ) {
-        this->encoded_message = encoded_message;
-        
-    }
-    int display() {
+	}
+	int parse(string &encoded_message) {
+		this->encoded_message = encoded_message;
 
-    }
+		// parse question section
+		
+		// get number fof question sections and answer sections
+
+		// parse that many sections
+	}
+	int display() {
+		// call sections
+
+	}
 };
 
 int main () {
-    
+	
 }
 
 // Example:

@@ -1,3 +1,5 @@
+#include "utils.h"
+
 struct ANSWER_CNAME_RDATA_TYPE {
 	string name;
 };

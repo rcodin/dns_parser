@@ -1,3 +1,5 @@
+#include "utils.h"
+
 enum MESSAGE_TYPE {
 	TYPE_LABEL,
 	TYPE_POINTER

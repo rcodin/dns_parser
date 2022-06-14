@@ -1,12 +1,17 @@
+#include "utils.h"
+
+#include <vector>
+#include <string>
+
 class DNS_Parser {
 private:
-	string encoded_message;
-	vector<Section*> sections;
+	std::string encoded_message;
+	std::vector<Section*> sections;
 public:
 	DNS_Parser() {
 
 	}
-	int parse(string &encoded_message) {
+	int parse(std::string &encoded_message) {
 		this->encoded_message = encoded_message;
 		int idx = 0;
 		// parse question section
